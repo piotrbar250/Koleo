@@ -36,10 +36,10 @@ jobs:
         path: ${{env.DOTNET_ROOT}}/myap
 
   deploy:
-    needs: build
     runs-on: windows-latest
+    needs: build
     steps:
-    - name: Download artifact
+    - name: Download artifact from build job
       uses: actions/download-artifact@v2
       with:
         name: publish
